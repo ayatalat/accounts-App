@@ -22,6 +22,14 @@ var accountController = {
             res.send(error);
         })
 
+    },
+    accountDetails:function(req,res){
+        console.log(req.param("id"))
+        account.findById(req.param("id")).then(account => {
+            res.send(account)
+        }).catch((error)=>{
+            res.send(error);
+        })
     }
 }
 
